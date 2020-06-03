@@ -1,4 +1,4 @@
-var dashcore = require('@dashevo/dashcore-lib');
-dashcore.P2P = require('./lib');
+var thoughtcore = require('@thoughtnetwork/thoughtcore-lib');
+thoughtcore.P2P = require('./lib');
 
-module.exports = dashcore.P2P;
+module.exports = thoughtcore.P2P;

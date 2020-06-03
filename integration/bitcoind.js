@@ -6,19 +6,19 @@ var chai = require('chai');
 var should = chai.should();
 var sinon = require('sinon');
 
-var dashcore = require('@dashevo/dashcore-lib');
-var _ = dashcore.deps._;
-var Random = dashcore.crypto.Random;
-var BN = dashcore.crypto.BN;
-var BufferUtil = dashcore.util.buffer;
+var thoughtcore = require('@thoughtnetwork/thoughtcore-lib');
+var _ = thoughtcore.deps._;
+var Random = thoughtcore.crypto.Random;
+var BN = thoughtcore.crypto.BN;
+var BufferUtil = thoughtcore.util.buffer;
 var p2p = require('../');
 var Peer = p2p.Peer;
 var Pool = p2p.Pool;
-var Networks = dashcore.Networks;
+var Networks = thoughtcore.Networks;
 var Messages = p2p.Messages;
 var Inventory = p2p.Inventory;
-var Block = dashcore.Block;
-var Transaction = dashcore.Transaction;
+var Block = thoughtcore.Block;
+var Transaction = thoughtcore.Transaction;
 
 // config
 var network = process.env.NETWORK === 'testnet' ? Networks.testnet : Networks.livenet;
@@ -38,8 +38,8 @@ var txHash = {
   'testnet': '22231e8219a0617a0ded618b5dc713fdf9b0db8ebd5bb3322d3011a703119d3b'
 };
 
-// These tests require a running dashd instance
-describe('Integration with ' + network.name + ' dashd', function() {
+// These tests require a running thoughtd instance
+describe('Integration with ' + network.name + ' thoughtd', function() {
 
   this.timeout(15000);
   var opts = {
